@@ -122,6 +122,8 @@
         <button type="submit">Validar</button>
     </form>
     <h2>¿Qué problema de seguridad descubres en el historial por haber enviado la inscripción con GET? ¿Qué método recomienda el artículo para un formulario como este y por qué?</h2>
-    <p>Con GET, los datos del formulario se añaden a la dirección de la página, por lo que pueden quedar visibles en el historial del navegador y en otros registros, esto puede exponer información personal o la contraseña. Para una inscripción se recomienda POST, porque envía los datos en el cuerpo de la petición y no los muestra en la URL. Aun así, debe usarse HTTPS para protegerlos durante la transmisión.</p>
+    <p>Con GET, los datos del formulario se añaden a la dirección de la página, por lo que pueden quedar visibles en el historial del navegador y en otros registros, esto puede exponer información personal o la contraseña.</p>
+    <h2>¿Qué ocurre al enviar la inscripción con POST? Según el artículo, ¿qué tendría que haber en el servidor para procesar esos datos?</h2>
+    <p>Al enviar la inscripción con POST, los datos se mandan en el cuerpo de la solicitud HTTP en lugar de aparecer en la URL. Para procesarlos, el servidor necesita un programa o script del lado del servidor que reciba la solicitud, lea los campos enviados y realice las acciones correspondientes, como validar y guardar la inscripción.</p>
 </body>
 </html>
