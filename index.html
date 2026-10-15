@@ -66,6 +66,21 @@
 
             <label for="mes">Mes:</label>
             <input type="month" id="mes" name="mes">
+
+            <label for="modulos">Módulos:</label>
+            <select id="modulos" name="modulos" multiple>
+                <optgroup label="Formación básica">
+                    <option value="lengua" selected>Lengua</option>
+                    <option value="matematicas">Matemáticas</option>
+                </optgroup>
+                <optgroup label="Formación específica">
+                    <option value="programacion">Programación</option>
+                    <option value="bases-de-datos">Bases de datos</option>
+                </optgroup>
+            </select>
+
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
         </fieldset>
     </form>
 </body>
