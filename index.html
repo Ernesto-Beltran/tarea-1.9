@@ -90,5 +90,15 @@
         <button type="reset">Restablecer formulario</button>
         <button type="button">Botón</button>
     </form>
+    <form action="https://es.wikipedia.org/w/index.php" method="get">
+        <label for="busqueda-wikipedia">Buscar en Wikipedia:</label>
+        <input type="search" id="busqueda-wikipedia" name="search" list="sugerencias-wikipedia">
+        <datalist id="sugerencias-wikipedia">
+            <option value="Formulario web"></option>
+            <option value="HTML"></option>
+            <option value="Protocolo de transferencia de hipertexto"></option>
+        </datalist>
+        <button type="submit">Buscar</button>
+    </form>
 </body>
 </html>
