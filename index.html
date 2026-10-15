@@ -1,26 +1,35 @@
 <!DOCTYPE html>
+<!-- Estructura inicial: html contiene el documento y lang declara su idioma. -->
 <html lang="es">
+<!-- head reúne metadatos; meta configura la codificación y la vista adaptable; title nombra la pestaña. -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarea 1.9 - Formularios HTML</title>
 </head>
+<!-- body contiene el contenido visible de la página. -->
 <body>
+    <!-- Formulario: form agrupa controles; action señala el destino y method el método HTTP. fieldset agrupa datos y legend titula el grupo. label describe cada control y for lo enlaza con su id. -->
     <form action="index.html" method="get">
         <fieldset>
             <legend>Datos personales by Ernesto</legend>
             <label for="nombre">Nombre:</label>
+            <!-- Campos de texto: input crea controles; type text permite escribir texto. id identifica el control y name nombra el dato enviado. placeholder da una pista, required obliga a completar el campo, autofocus lo enfoca al cargar, size fija el ancho visible y maxlength limita caracteres. -->
             <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required autofocus size="30" maxlength="40">
 
             <label for="contrasena">Contraseña:</label>
+            <!-- type password oculta lo escrito y minlength establece la longitud mínima. -->
             <input type="password" id="contrasena" name="contrasena" minlength="8">
 
             <label for="correo">Correo:</label>
+            <!-- type email permite escribir una dirección de correo y valida su formato básico. -->
             <input type="email" id="correo" name="correo" required>
 
             <label for="telefono">Teléfono:</label>
+            <!-- type tel es para teléfonos; pattern limita el formato con una expresión regular. -->
             <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}">
 
+            <!-- Otros datos personales: type date permite elegir una fecha y file seleccionar un archivo. -->
             <label for="fecha-nacimiento">Fecha de nacimiento:</label>
             <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
 
@@ -28,11 +37,14 @@
             <input type="file" id="foto" name="foto">
 
             <label for="curso">Curso:</label>
+            <!-- value establece el valor inicial; readonly permite verlo sin editarlo. -->
             <input type="text" id="curso" name="curso" value="2026-27" readonly>
 
             <label for="centro">Centro:</label>
+            <!-- disabled desactiva el control y hace que su valor no se envíe. -->
             <input type="text" id="centro" name="centro" value="IES La Asunción" disabled>
         </fieldset>
+        <!-- Opciones: p presenta un rótulo en un párrafo; radio permite una elección por grupo name y checkbox permite marcar varias opciones. value indica el dato enviado por cada opción. -->
         <fieldset>
             <legend>Preferencias</legend>
             <p>Turno:</p>
@@ -49,6 +61,7 @@
             <input type="checkbox" id="interes-lectura" name="intereses" value="lectura">
             <label for="interes-lectura">Lectura</label>
 
+            <!-- Campos numéricos y temporales: number admite números limitados por min y max, con incrementos step; range es un deslizador. color permite elegir un color, time una hora, week una semana y month un mes. -->
             <label for="horas-estudio">Horas de estudio:</label>
             <input type="number" id="horas-estudio" name="horas-estudio" min="0" max="10" step="2">
 
@@ -67,6 +80,7 @@
             <label for="mes">Mes:</label>
             <input type="month" id="mes" name="mes">
 
+            <!-- Módulos y comentarios: select crea una lista y multiple permite elegir varias opciones; optgroup agrupa opciones y label nombra el grupo; option ofrece una elección y selected la marca inicialmente. textarea permite texto multilínea, con rows para las filas y cols para el ancho. -->
             <label for="modulos">Módulos:</label>
             <select id="modulos" name="modulos" multiple>
                 <optgroup label="Formación básica">
@@ -82,14 +96,17 @@
             <label for="comentarios">Comentarios:</label>
             <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
         </fieldset>
+        <!-- Botones: input submit envía el formulario; reset restaura valores iniciales; button no tiene acción automática; image es un botón gráfico, src indica la imagen y alt aporta su texto alternativo. -->
         <input type="submit" value="Enviar">
         <input type="reset" value="Restablecer">
         <input type="button" value="Botón input">
         <input type="image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='36'%3E%3Crect width='100%25' height='100%25' fill='%23e0e0e0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='14'%3EEnviar%3C/text%3E%3C/svg%3E" alt="Enviar formulario">
+        <!-- button crea un botón con contenido; type define si envía, reinicia o no ejecuta una acción automática. -->
         <button type="submit">Enviar formulario</button>
         <button type="reset">Restablecer formulario</button>
         <button type="button">Botón</button>
     </form>
+    <!-- Buscador de Wikipedia: type search es un campo de búsqueda; list lo enlaza con datalist, que ofrece sugerencias identificadas por id. -->
     <form action="https://es.wikipedia.org/w/index.php" method="get">
         <label for="busqueda-wikipedia">Buscar en Wikipedia:</label>
         <input type="search" id="busqueda-wikipedia" name="search" list="sugerencias-wikipedia">
@@ -100,6 +117,7 @@
         </datalist>
         <button type="submit">Buscar</button>
     </form>
+    <!-- Buscador de mapas: reutiliza select, optgroup y option para enviar la ciudad elegida. -->
     <form action="https://www.openstreetmap.org/search" method="get">
         <label for="consulta-mapa">Buscar ciudad:</label>
         <select id="consulta-mapa" name="query">
@@ -114,6 +132,7 @@
         </select>
         <button type="submit">Buscar en el mapa</button>
     </form>
+    <!-- Validador: type url admite una dirección web y verifica su formato básico. -->
     <form action="https://validator.w3.org/nu/" method="get">
         <label for="direccion-web">Dirección web:</label>
         <input type="url" id="direccion-web" name="doc" value="https://ernesto-beltran.github.io/tarea-1.9/">
@@ -121,6 +140,7 @@
         <label for="ver-codigo">Ver el código</label>
         <button type="submit">Validar</button>
     </form>
+    <!-- Reflexión sobre GET: h2 introduce un encabezado de segundo nivel. -->
     <h2>¿Qué problema de seguridad descubres en el historial por haber enviado la inscripción con GET? ¿Qué método recomienda el artículo para un formulario como este y por qué?</h2>
     <p>Con GET, los datos del formulario se añaden a la dirección de la página, por lo que pueden quedar visibles en el historial del navegador y en otros registros, esto puede exponer información personal o la contraseña.</p>
     <h2>¿Qué ocurre al enviar la inscripción con POST? Según el artículo, ¿qué tendría que haber en el servidor para procesar esos datos?</h2>
